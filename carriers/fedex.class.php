@@ -76,7 +76,7 @@ class FedExCarrier extends AbstractCarrier
             $row = array(
                 'status' => $scan->scanStatus,
                 'time' => $scan->scanDate . ' ' . $scan->scanTime . ' ' . $scan->GMTOffset,
-                'location' => $scan->scanLocation,
+                'location' => isset($scan->scanLocation) ?  $scan->scanLocation : '',
                 'details' => ($scan->showReturnToShipper) ? 'Show return to shipper: ' . $scan->showReturnToShipper : ''
             );
 
